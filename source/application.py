@@ -23,7 +23,7 @@ def ocr():
     img = Image.open(io.BytesIO(img_bytes))
     results = reader.readtext(np.array(img))
     results = [[str(item[0]), item[1], item[2]] for item in results]
-    return jsonify(results)
+    return {"data": results}
     
 
 if __name__ == '__main__':
